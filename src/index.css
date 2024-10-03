@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure the dark mode is enabled using Tailwind's dark variant */
+html,body {
+  background-color: #121212;
+}
