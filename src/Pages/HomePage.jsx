@@ -19,7 +19,7 @@ export default function TelegramUI() {
     },
     {
       id: 2,
-      name: "Jane Smith",
+      name: "Krrish",
       lastMessage: "See you tomorrow!",
       time: "11:45 AM",
       unread: 0,
