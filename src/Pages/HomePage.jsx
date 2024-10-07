@@ -13,11 +13,49 @@ export default function TelegramUI() {
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen); // Sidebar toggle function
 
   const chats = [
+<<<<<<< HEAD
     { id: 1, name: "FYDS(24-25)", lastMessage: "Tomorrow come to college", time: "12:30 PM", unread: 2 },
     { id: 2, name: "Jane Smith", lastMessage: "See you tomorrow!", time: "11:45 AM", unread: 0 },
     { id: 3, name: "Work Group", lastMessage: "Alice: The meeting is at 3 PM", time: "10:20 AM", unread: 5 },
     { id: 4, name: "Family", lastMessage: "Mom: Don't forget to call grandma", time: "Yesterday", unread: 0 },
     { id: 5, name: "Best Friends", lastMessage: "Tom: Who's up for pizza tonight?", time: "Yesterday", unread: 1 },
+=======
+    {
+      id: 1,
+      name: "FYDS(24-25)",
+      lastMessage: "Tomorrow come to college",
+      time: "12:30 PM",
+      unread: 2,
+    },
+    {
+      id: 2,
+      name: "Krrish",
+      lastMessage: "See you tomorrow!",
+      time: "11:45 AM",
+      unread: 0,
+    },
+    {
+      id: 3,
+      name: "Work Group",
+      lastMessage: "Alice: The meeting is at 3 PM",
+      time: "10:20 AM",
+      unread: 5,
+    },
+    {
+      id: 4,
+      name: "Family",
+      lastMessage: "Mom: Don't forget to call grandma",
+      time: "Yesterday",
+      unread: 0,
+    },
+    {
+      id: 5,
+      name: "Best Friends",
+      lastMessage: "Tom: Who's up for pizza tonight?",
+      time: "Yesterday",
+      unread: 1,
+    },
+>>>>>>> a1d9c895838b4f53cf8feae05f8814d0656c934b
   ];
 
   // Array of light gradients for the avatars
