@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { MdEdit } from "react-icons/md";
 import { FaBars } from "react-icons/fa6";
 import { MdSearch } from "react-icons/md";
 import { useState } from "react";
-import Sidebar from './Sidebar'; // Importing Sidebar Component
+import Sidebar from "./Sidebar"; // Importing Sidebar Component
 
 export default function TelegramUI() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -13,49 +13,76 @@ export default function TelegramUI() {
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen); // Sidebar toggle function
 
   const chats = [
-
-    { id: 1, name: "FYDS(24-25)", lastMessage: "Tomorrow come to college", time: "12:30 PM", unread: 2 },
-    { id: 2, name: "Jane Smith", lastMessage: "See you tomorrow!", time: "11:45 AM", unread: 0 },
-    { id: 3, name: "Work Group", lastMessage: "Alice: The meeting is at 3 PM", time: "10:20 AM", unread: 5 },
-    { id: 4, name: "Family", lastMessage: "Mom: Don't forget to call grandma", time: "Yesterday", unread: 0 },
-    { id: 5, name: "Best Friends", lastMessage: "Tom: Who's up for pizza tonight?", time: "Yesterday", unread: 1 },
-
     {
       id: 1,
       name: "FYDS(24-25)",
-      lastMessage: "Tomorrow come to college",
+      lastMessage: "Avinash: Tomorrow come to college",
       time: "12:30 PM",
-      unread: 2,
+      unread: 0,
     },
     {
       id: 2,
-      name: "Krrish",
-      lastMessage: "See you tomorrow!",
-      time: "11:45 AM",
+      name: "Shivam",
+      lastMessage: "Shivam is on Telegram !",
+      time: "Sat",
       unread: 0,
     },
     {
       id: 3,
-      name: "Work Group",
-      lastMessage: "Alice: The meeting is at 3 PM",
-      time: "10:20 AM",
-      unread: 5,
+      name: "Dhruv",
+      lastMessage: "Dhruv Joined Telegram !",
+      time: "Fri",
+      unread: 0,
     },
     {
       id: 4,
-      name: "Family",
-      lastMessage: "Mom: Don't forget to call grandma",
-      time: "Yesterday",
+      name: "Laksh Tripathi",
+      lastMessage: "Laksh Tripathi joined Telegram !",
+      time: "Sep 28",
+      unread: 0,
+    },
+    {
+      id: 6,
+      name: "Jitendra",
+      lastMessage: "Jitendra joined Telegram!",
+      time: "Sep 27",
       unread: 0,
     },
     {
       id: 5,
-      name: "Best Friends",
-      lastMessage: "Tom: Who's up for pizza tonight?",
-      time: "Yesterday",
-      unread: 1,
+      name: "Karan Sawant",
+      lastMessage: "Okay Bhai",
+      time: "Sep 25",
+      unread: 0,
     },
-
+    {
+      id: 7,
+      name: "Ritik",
+      lastMessage: "Ritik joined Telegram!",
+      time: "Sep 12",
+      unread: 0,
+    },
+    {
+      id: 8,
+      name: "Aaditya",
+      lastMessage: "Aditya joined Telegram!",
+      time: "Sep 10",
+      unread: 0,
+    },
+    {
+      id: 9,
+      name: "Shubham",
+      lastMessage: "Shubham joined Telegram!",
+      time: "Sep 8",
+      unread: 0,
+    },
+    {
+      id: 10,
+      name: "Aadarsh Singh",
+      lastMessage: "Aadarsh Singh joined Telegram!",
+      time: "Sep 27",
+      unread: 0,
+    },
   ];
 
   // Array of light gradients for the avatars
@@ -72,15 +99,19 @@ export default function TelegramUI() {
   };
 
   return (
-    <div className={`relative ${isDarkMode ? "bg-black" : "bg-gray-100"} mx-auto min-h-screen flex`}>
+    <div
+      className={`relative ${
+        isDarkMode ? "bg-black" : "bg-gray-100"
+      } mx-auto min-h-screen flex`}
+    >
       {/* Sidebar with sliding animation */}
       <div
         className={`fixed top-0 left-0 h-full transition-transform transform z-[99999] ${
           isSidebarOpen ? "translate-x-[-100]" : "-translate-x-full"
         }`}
-        style={{ width: '450px' }} // Width of the sidebar
+        style={{ width: "450px" }} // Width of the sidebar
       >
-        <Sidebar isDarkMode={isDarkMode}/>
+        <Sidebar isDarkMode={isDarkMode} />
       </div>
 
       {/* Main content */}
@@ -92,7 +123,10 @@ export default function TelegramUI() {
           }`}
         >
           <div className="flex items-center">
-            <FaBars className="h-5 w-5 mr-4 cursor-pointer" onClick={toggleSidebar} />
+            <FaBars
+              className="h-5 w-5 mr-4 cursor-pointer"
+              onClick={toggleSidebar}
+            />
             <h1 className="text-xl font-semibold">Telegram</h1>
           </div>
           <div className="flex items-center">
@@ -101,13 +135,19 @@ export default function TelegramUI() {
         </header>
 
         {/* Chat list */}
-        <div className="flex-1 overflow-y-auto pt-16">
+        <div className="flex-1 overflow-y-auto pt-14">
           {chats.map((chat, index) => (
             <Link
-              to={`/xyz/${chat.id}`}
+              to={
+                index === 0
+                  ? `xyz/${chat.id}` // First chat links to /xyz/:id
+                  : `y/${chat.name.replace(/\s+/g, "")}` // Others link to /y/:name (without spaces)
+              }
               key={chat.id}
-              className={`flex items-center p-4 border-b ${
-                isDarkMode ? "border-black bg-[#141414] hover:bg-zinc-900" : "border-gray-200 bg-white"
+              className={`flex items-center p-4 border-b border-[1.5px] ${
+                isDarkMode
+                  ? "border-black bg-[#141414] hover:bg-zinc-900"
+                  : "border-gray-200 bg-white"
               }`}
             >
               {/* Avatar with Gradient based on Index */}
@@ -123,15 +163,33 @@ export default function TelegramUI() {
               </div>
               <div className="flex-1">
                 <div className="flex justify-between items-baseline">
-                  <h2 className={`text-lg font-semibold ${isDarkMode ? "text-white" : "text-gray-900"}`}>
+                  <h2
+                    className={`text-lg font-semibold ${
+                      isDarkMode ? "text-white" : "text-gray-900"
+                    }`}
+                  >
                     {chat.name}
                   </h2>
-                  <span className={`text-sm ${isDarkMode ? "text-gray-400" : "text-gray-500"}`}>{chat.time}</span>
+                  <span
+                    className={`text-sm ${
+                      isDarkMode ? "text-gray-400" : "text-gray-500"
+                    }`}
+                  >
+                    {chat.time}
+                  </span>
                 </div>
                 <div className="flex justify-between items-baseline">
-                  <p className={`${isDarkMode ? "text-gray-300" : "text-gray-600"} truncate`}>{chat.lastMessage}</p>
+                  <p
+                    className={`${
+                      isDarkMode ? "text-gray-400" : "text-gray-600"
+                    } truncate`}
+                  >
+                    {chat.lastMessage}
+                  </p>
                   {chat.unread > 0 && (
-                    <span className="bg-green-500 text-white rounded-full px-2 py-1 text-xs">{chat.unread}</span>
+                    <span className="bg-green-500 text-white rounded-full px-2 py-1 text-xs">
+                      {chat.unread}
+                    </span>
                   )}
                 </div>
               </div>

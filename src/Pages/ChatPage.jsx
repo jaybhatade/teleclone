@@ -38,7 +38,7 @@ export default function TelegramChatView() {
 
   const contact = {
     name: "FYDS(23-24)",
-    status: "online",
+    status: "81 members",
     avatar: "https://jaybhatade.carrd.co/assets/images/image01.jpg?v=a1bd9279",
   };
 

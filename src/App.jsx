@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import TelegramUI from "./Pages/HomePage";
 import ChatPage from "./Pages/ChatPage";
+import Demochat from "./Pages/Demochat";
 
 // Layout component for wrapping routes
 function Layout() {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         element: <ChatPage />, // Your TelegramUI component
       },
       // Add more routes here if needed
+      {
+        path: "y/:name", // Home path
+        element: <Demochat />, // Your TelegramUI component
+      },
     ],
   },
 ]);
