@@ -7,8 +7,16 @@ import { TbSticker2 } from "react-icons/tb";
 import { useNavigate, Link } from "react-router-dom";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import dayjs from "dayjs"; // Use dayjs for date formatting
+import MessageWithImage from "./ImageMessage";
 
 export default function TelegramChatView() {
+  const messageData = {
+    sender: "Avinash",
+    text: "Check out this image!",
+    time: "10:15 AM",
+    image: "/notice.jpg", // Replace with your image URL
+  };
+
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([
     { id: 1, text: "Tomorrow batch 1 Python prac at 9.15 in lab 3 (318)", sent: false, time: "9:26 AM", date: new Date(2024, 8, 16), sender: "Avinash"},
@@ -25,9 +33,16 @@ export default function TelegramChatView() {
     { id: 12, text: "Students will have tomorrow off since all staff members will be attending meetings with higher authorities. So tomorrow is no college.", sent: false, time: "9:15 PM", date: new Date(2024, 8, 20), sender: "Avinash" },
     { id: 13, text: "On monday fyds python batch 2 practical at 9.15am", sent: false, time: "2:20 PM", date: new Date(2024, 8, 21), sender: "Avinash" },
     { id: 14, text: "On monday fyds python batch 3 practical at 9.15am", sent: false, time: "10:10 AM", date: new Date(2024, 8, 22), sender: "Avinash" },
-    { id: 15, text: "", sent: false, time: "11:50 AM", date: new Date(2024, 8, 2), sender: "Avinash" },
-    { id: 16, text: "", sent: false, time: "11:50 AM", date: new Date(2024, 8, 2), sender: "Avinash" },
-    { id: 17, text: "", sent: false, time: "11:50 AM", date: new Date(2024, 8, 2), sender: "Avinash" },
+    { id: 15, text: "Today batch 3  having DS practical from 10 am in lab 3", sent: false, time: "8:24 AM", date: new Date(2024, 8, 24), sender: "Avinash" },
+    { id: 16, text: "All students Come to 3rd floor lab", sent: false, time: "9:11 AM", date: new Date(2024, 8, 28), sender: "Avinash" },
+    { id: 17, text: "On Monday FYDS batch 1 having DS practical at 9.15 am", sent: false, time: "11:50 AM", date: new Date(2024, 8, 28), sender: "Avinash" },
+    { id: 18, text: "Batch 1 submit ur Python prac file on Thursday at 9.15", sent: false, time: "11:50 AM", date: new Date(2024, 9, 1), sender: "Avinash" },
+    { id: 19, text: "Fyds batch 1 students ur writeups are not up to the mark You will have to rewrite the files again", sent: false, time: "11:50 AM", date: new Date(2024, 9,3), sender: "Avinash" },
+    { id: 20, text: "", sent: false, time: "11:50 AM", date: new Date(2024, 8, 2), sender: "Avinash" },
+    { id: 21, text: "", sent: false, time: "11:50 AM", date: new Date(2024, 8, 2), sender: "Avinash" },
+    { id: 22, text: "", sent: false, time: "11:50 AM", date: new Date(2024, 8, 2), sender: "Avinash" },
+    { id: 23, text: "", sent: false, time: "11:50 AM", date: new Date(2024, 8, 2), sender: "Avinash" },
+    { id: 24, text: "", sent: false, time: "11:50 AM", date: new Date(2024, 8, 2), sender: "Avinash" },
 
   ]);
 
@@ -147,6 +162,8 @@ export default function TelegramChatView() {
             </div>
           );
         })}
+
+        <MessageWithImage messageData={messageData} />
         <div ref={messagesEndRef} /> {/* Empty div to scroll to */}
       </div>
 
