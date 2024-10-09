@@ -50,8 +50,8 @@ export default function TelegramUI() {
     },
     {
       id: 5,
-      name: "Karan Sawant",
-      lastMessage: "Okay Bhai",
+      name: "Karan",
+      lastMessage: "Karan joined Telegram!",
       time: "Sep 25",
       unread: 0,
     },
